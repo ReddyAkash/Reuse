@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Planning for Sustainable Tamilnadu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .top-bar {
+            background-color: #FFE5B4;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            height: 60px; /* Fixed height for navbar */
+            overflow: hidden;
+        }
+
+        .logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+.logo {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        overflow: hidden; /* Smaller logo on mobile */
+    }
+
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('background.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            position:relative;
+            overflow:hidden;
+        }
+        .carousel-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+       }
+
+       .carousel-track {
+            display: flex;
+            width: 300%; /* 3 images = 300% width */
+            height: 100%;
+            animation: carousel 25s linear infinite;
+        }
+
+        .carousel-slide {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @keyframes carousel {
+            0% {
+            transform: translateX(0);
+        }
+        30% {
+            transform: translateX(0);
+        }
+        35% {
+            transform: translateX(-33.33%);
+        }
+        60% {
+            transform: translateX(-33.33%);
+        }
+        65% {
+            transform: translateX(-66.66%);
+        }
+        90% {
+            transform: translateX(-66.66%);
+        }
+        95% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(0);
+       }
+    }
+
+        .hero-content {
+            max-width: 800px;
+            position:relative;
+            z-index:1;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .initiatives-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .initiative-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .initiative-card a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .initiative-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            background-color: #2ecc71;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn {
+    padding: 8px 20px;
+    border: 1px solid #333;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #333;
+    color: #FFE5B4;
+}
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            background-color: #1b3a34;
+            padding: 60px 20px;
+            color: white;
+        }
+        .contact-form-section {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form-section h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .contact-form-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 16px;
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+             height: 120px;
+             resize: vertical;
+        }
+        .submit-btn {
+           background-color: #40b5a3;
+           color: white;
+           padding: 12px 30px;
+           border: none;
+           border-radius: 25px;
+           font-size: 16px;
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+           width: fit-content;
+        }
+        .submit-btn:hover {
+           background-color: #359686;
+        }
+
+        .impact-stories {
+    background-color: #d4925f;
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+}
+
+.impact-title {
+    color: #ffeb3b;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.testimonial-slider {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 50px;
+}
+
+.testimonial {
+    padding: 20px;
+}
+
+.testimonial-text {
+    font-size: 28px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.testimonial-author {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+.slider-dots {
+    margin-top: 30px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: white;
+}
+
+@media (max-width: 768px) {
+    .testimonial-text {
+        font-size: 20px;
+    }
+    
+    .testimonial-author {
+        font-size: 16px;
+    }
+}
+
+
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .initiatives-grid {
+                grid-template-columns: 1fr;
+            }
+            
+    
+            .top-bar {
+               padding: 10px 20px;
+            }
+            .contact-form-section {
+               padding: 40px 20px;
+            }
+    
+            .contact-form-section h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="top-bar">
+    <div class="logo">
+        <img src="pngegg.png" alt="Sustainable TN Logo">
+    </div>
+    <a href="#contact-form" class="contact-btn">Contact us</a>
+</nav>
+
+
+    <section class="hero">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="background.jpeg" alt="Sustainability">
+                </div>
+                <div class="carousel-slide">
+                    <img src="sample1.jpg" alt="Innovation">
+                </div>
+                <div class="carousel-slide">
+                    <img src="health.jpg" alt="Development">
+                </div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Driving Eco-Friendly Innovations in Tamilnadu</h1>
+            <p class="hero-description">Pioneering strategic solutions to drive sustainability in Tamilnadu, aligning innovation with the UN's Sustainable Development Goals for impactful progress.</p>
+            <button class="cta-button" onclick="scrollToSection('initiatives')">Learn More</button>
+        </div>
+    </section>
+
+    <section id="initiatives" class="initiatives-section">
+        <h2 class="section-title">Strategic Planning for a Sustainable Tamilnadu</h2>
+        <div class="initiatives-grid">
+            <div class="initiative-card">
+                <a href="RE.html" style="text-decoration: none; color: inherit;">
+                <img src="RE.jpg" alt="Renewable Energy">
+                <div class="card-content">
+                    <h3 class="card-title">Renewable Energy Solutions</h3>
+                    <p class="card-description">Empower communities with sustainable energy sources, reducing carbon footprint and minimizing costs.</p>
+                </div>
+                </a>
+            </div>
+            <div class="initiative-card">
+                <img src="sample1.jpg" alt="Water Conservation">
+                <div class="card-content">
+                    <h3 class="card-title">Water Conservation Initiatives</h3>
+                    <p class="card-description">Implement effective water management techniques to preserve resources for future generations.</p>
+                </div>
+            </div>
+            <div class="initiative-card">
+                <img src="sample2.jpg" alt="Sustainable Agriculture">
+                <div class="card-content">
+                    <h3 class="card-title">Sustainable Agriculture Practices</h3>
+                    <p class="card-description">Promote eco-friendly farming methods that enhance productivity while protecting the environment.</p>
+                </div>
+            </div>
+            <div class="initiative-card">
+                <img src="Edu.png" alt="Quality Education">
+                <div class="card-content">
+                    <h3 class="card-title">Education and Skill Development</h3>
+                    <p class="card-description">Enhance opportunities by providing quality education and vocational training to empower youth.</p>
+                </div>
+            </div>
+            <div class="initiative-card">
+                <img src="health.jpg" alt="Health and Well bieng">
+                <div class="card-content">
+                    <h3 class="card-title">Community Health Programs</h3>
+                    <p class="card-description">Foster well-being through accessible healthcare initiatives and preventative wellness education.</p>
+                </div>
+            </div>
+            <div class="initiative-card">
+                <img src="bio.jpg" alt="Biodiversity">
+                <div class="card-content">
+                    <h3 class="card-title">Biodiversity Preservation Efforts</h3>
+                    <p class="card-description">Protect native flora and fauna through conservation projects supporting local ecosystems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact-stories">
+        <h2 class="impact-title">Impact Stories</h2>
+        <div class="testimonial-slider">
+            <button class="slider-btn prev-btn">&#10094;</button>
+            <div class="testimonial">
+                <p class="testimonial-text">Partnering with Sustain has transformed our efforts towards sustainable development. Their platform provides invaluable tools and resources that have significantly enhanced our projects' impact and reach. We're thrilled with the positive changes we've achieved thanks to their expert guidance.</p>
+                <p class="testimonial-author">- Ravi Deshmukh</p>
+            </div>
+            <button class="slider-btn next-btn">&#10095;</button>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer id="contact-form">
+        <div class="footer-content">
+            <div class="contact-form-section">
+                <h2>Reach Out to Us</h2>
+                <p>Contact us to participate in sustainable development initiatives in Tamilnadu.</p>
+                <form class="contact-form" action="https://formspree.io/f/mjkgrdjk"
+                method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const topBar = document.querySelector('.top-bar');
+            if (window.scrollY > 50) {
+                topBar.style.backgroundColor = 'rgba(255, 229, 180, 0.95)';
+            } else {
+                topBar.style.backgroundColor = '#FFE5B4';
+            }
+        });
+
+        const cards = document.querySelectorAll('.initiative-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.transition = 'transform 0.3s ease';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').slice(1);
+        scrollToSection(targetId);
+    });
+})
+
+// Testimonial slider functionality
+const testimonials = [
+    {
+        text: "Partnering with Sustain has transformed our efforts towards sustainable development. Their platform provides invaluable tools and resources that have significantly enhanced our projects' impact and reach. We're thrilled with the positive changes we've achieved thanks to their expert guidance.",
+        author: "Ravi Deshmukh"
+    },
+    {
+        text: "Sustain has been instrumental in elevating our sustainable initiatives. Their adept tools and resources have empowered us to achieve meaningful results in less time. Collaborating with them was a pivotal decision that enhanced our impact significantly.",
+        author: "Anita Verma"
+    },
+    {
+        text: "Sustain has revolutionized how we approach sustainable development. Their platform offers insightful resources and tools that drive impactful change. With their guidance our community projects have become more efficient and far-reaching. Investing in Sustain has been a game-change for us!",
+        author: "Neha Gupta"
+    },
+];
+
+let currentTestimonial = 0;
+
+function updateTestimonial() {
+    const testimonial = document.querySelector('.testimonial');
+    const dots = document.querySelectorAll('.slider-dots .dot');
+    
+    testimonial.style.opacity = 0;
+    setTimeout(() => {
+        testimonial.innerHTML = `
+            <p class="testimonial-text">${testimonials[currentTestimonial].text}</p>
+            <p class="testimonial-author">- ${testimonials[currentTestimonial].author}</p>
+        `;
+        testimonial.style.opacity = 1;
+        
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentTestimonial);
+        });
+    }, 300);
+}
+
+document.querySelector('.next-btn').addEventListener('click', () => {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    updateTestimonial();
+});
+
+document.querySelector('.prev-btn').addEventListener('click', () => {
+    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+    updateTestimonial();
+});
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy Initiatives - Tamil Nadu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Questrial', sans-serif;
+        }
+
+        .initiative-header {
+            height: 50vh;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('energy1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            max-width: 800px;
+        }
+
+        .header-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .initiative-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .initiative-item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            perspective: 1000px;
+            height: 370px;
+        }
+        .initiative-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.initiative-text {
+    margin-top: 15px;
+}
+
+.initiative-text h3 {
+    color: #2ecc71;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.initiative-text p {
+    color: #666;
+    line-height: 1.6;
+}
+        .flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.initiative-item:hover .flip-card {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.flip-card-front {
+    background: white;
+}
+
+.flip-card-back {
+    background: #2ecc71;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: white;
+    color: #2ecc71;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+}
+
+        .initiative-image {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .initiative-text h3 {
+            color: #2ecc71;
+            margin-bottom: 10px;
+        }
+
+        .stats-section {
+            background: #f5f5f5;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            color: #2ecc71;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .initiative-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="initiative-header">
+        <div class="header-content">
+            <h1 class="header-title">Renewable Energy Solutions in Tamil Nadu</h1>
+            <p>Leading India's sustainable energy transformation through innovative solutions and community empowerment</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>Current Initiatives</h2>
+        <div class="initiative-grid">
+            <div class="initiative-item">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="hydro.jpg" alt="Hydro Power Projects" class="initiative-image">
+                        <div class="initiative-text">
+                            <h3>Hydro Power Projects</h3>
+                            <p>TNGECL invites private players to set Up off-river pumped storage projects, pumped storage is a type of hydroelectric energy storage system in which water is pumped from a lower reservoir to an upper one when there is surplus power.</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Read More</h3>
+                        <p>Click here to learn more about Hydro Power Projects in Tamil Nadu.</p>
+                        <a href="https://www.newindianexpress.com/states/tamil-nadu/2025/Jan/08/tngecl-invites-private-players-to-set-up-off-river-pumped-storage-projects#:~:text=Off%2Driver%20PSPs%20refer%20to,leader%20in%20renewable%20energy%20development" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="initiative-item">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="wind.jpg" alt="Hydro Power Projects" class="initiative-image">
+                        <div class="initiative-text">
+                            <h3>Wind Energy Expansion</h3>
+                            <p>A senior official from Tamil Nadu Green Energy Corporation Limited (TNGECL) told TNIE, “Recently, the Tamil Nadu government introduced three policies for wind, pumped hydro and small hydropower to boost installed capacity.</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Read More</h3>
+                        <p>Click here to learn more about Wind energy Projects in Tamil Nadu.</p>
+                        <a href="https://www.newindianexpress.com/states/tamil-nadu/2025/Jan/05/tn-aims-to-generate-7500-megawatt-additional-renewable-power-via-three-new-policies#:~:text=CHENNAI%3A%20The%20state%20is%20aiming,exemption%20from%20interstate%20transmission%20charges" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">2025-26</div>
+                <p> The state is aiming to add 7,500 Megawatt (MW) of renewable energy capacity in the financial year 2025-26, supported by new policies, plans from major corporate players, and exemption from interstate transmission charges.</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24,091 MW</div>
+                <p>TN’s total renewable energy capacity rose to 24,091 MW by November 2024, up from 19,983.42 MW in March 2024. This reflects an increase of 4,107.58 MW.</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2030</div>
+                <p>We aim to generate 100 BU of renewable energy by 2030,” the official said.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
