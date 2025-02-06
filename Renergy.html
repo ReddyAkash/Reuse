@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Hydro Energy Initiatives</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            max-width: 800px;
+        }
+
+        .hero-description {
+            font-size: 24px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            line-height: 1.4;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #ffd700;
+            color: #000;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: white;
+        }
+
+        /* Systems Section */
+        .systems-section {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .systems-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .system-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .system-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .system-content h3 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .system-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Projects Section */
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .project-location {
+            color: #2ecc71;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .stat-item {
+            background: #f5f6fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        <style>
+/* Updates Section */
+.updates-section {
+    background: #F1F8E9;
+    padding: 40px 20px;
+    margin: 40px 0;
+}
+
+.updates-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.updates-carousel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.carousel-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    overflow: hidden;
+}
+
+.update-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    min-width: 300px;
+}
+
+.update-card.active {
+    transform: scale(1.02);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+}
+
+.update-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.update-date {
+    color: #689F38;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.update-card h4 {
+    color: #33691E;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.update-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.carousel-arrow {
+    background: #C8E6C9;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #33691E;
+    transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background: #A5D6A7;
+}
+
+
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-description {
+                font-size: 18px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .system-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .system-image {
+                height: 200px;
+            }
+            
+            .project-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            .carousel-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .update-card {
+        min-width: auto;
+    }
+    
+    .carousel-arrow {
+        display: none;
+    }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <img src="Images/beach.jpg" alt="Tamil Nadu Beach">
+            </div>
+            <div class="carousel-slide">
+                <img src="Images/coast.jpg" alt="Solar Panels">
+            </div>
+            <div class="carousel-slide">
+                <img src="Images/hydroe.jpeg" alt="Tamil Village">
+            </div>
+        </div>
+        <div class="overlay">
+            <h1 class="hero-title">Innovative Hydro Projects in Tamil Nadu</h1>
+            <p class="hero-description">Pioneering sustainable hydro energy solutions, Sustain empowers Tamil Nadu with cutting-edge innovations for a cleaner, greener future.</p>
+            <div class="button-group">
+                <a href="#systems" class="btn btn-primary">Explore the solutions</a>
+                <a href="#contact" class="btn btn-secondary">Contact</a>
+            </div>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <!-- Hydro Systems Section -->
+    <section id="systems" class="systems-section">
+        <div class="systems-container">
+            <h2 class="section-title">Hydro Energy Systems in Tamil Nadu</h2>
+            
+            <div class="system-card">
+                <img src="Images/Mettur.jpeg" alt="Conventional Hydro" class="system-image">
+                <div class="system-content">
+                    <h3>Conventional Hydropower</h3>
+                    <p>Traditional dam-based systems utilizing river flow:</p>
+                    <ul>
+                        <li>Mettur Dam (120 MW capacity)</li>
+                        <li>Pykara Hydroelectric Project (150 MW)</li>
+                        <li>Average 3,500 MU annual generation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="system-card">
+                <img src="Images/Kadamparai.jpg" alt="Pumped Storage" class="system-image">
+                <div class="system-content">
+                    <h3>Pumped Storage Systems</h3>
+                    <p>Energy storage solution using surplus power:</p>
+                    <ul>
+                        <li>Upper reservoir (Kalvarayan Hills)</li>
+                        <li>Lower reservoir (Existing dams)</li>
+                        <li>80% round-trip efficiency</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="system-card">
+                <img src="Images/pykara.jpg" alt="Small Hydro" class="system-image">
+                <div class="system-content">
+                    <h3>Small Hydropower</h3>
+                    <p>Decentralized rural energy projects:</p>
+                    <ul>
+                        <li>100kW-25MW capacity range</li>
+                        <li>47 operational plants statewide</li>
+                        <li>New 2024 policy incentives</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Projects Section -->
+    <section class="projects-container">
+        <h2 class="section-title">Current Hydro Projects (2025)</h2>
+        
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="Images/pump.jpg" alt="Pumped Storage" class="project-image">
+                <div class="project-location">📍 Kalvarayan Hills</div>
+                <h3>Pumped Storage Projects</h3>
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">3,300 MW</div>
+                        <div class="stat-label">Greenko Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">2,500 MW</div>
+                        <div class="stat-label">Tangedco Projects</div>
+                    </div>
+                </div>
+                <p>Developing off-river pumped storage systems for energy storage and grid stability.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="Images/py.jpeg" alt="Small Hydro" class="project-image">
+                <div class="project-location">📍 Statewide Canals</div>
+                <h3>Small Hydropower Expansion</h3>
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">300 MW</div>
+                        <div class="stat-label">2030 Target</div>
+                    </div>
+                </div>
+                <p>The policy focuses on small hydro projects ranging from 100 KW to 10 MW (Unit size of 5 MW each)</p>
+            </div>
+
+            <div class="project-card">
+                <img src="Images/mukurthi.jpg" alt="Plant Upgrade" class="project-image">
+                <div class="project-location">📍 47 Plants Statewide</div>
+                <h3>Plant Modernization</h3>
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">₹362B</div>
+                        <div class="stat-label">Investment</div>
+                    </div>
+                </div>
+                <p>The Tamil Nadu Generation and Distribution Corporation (Tangedco) has 47 hydropower stations with a generation capacity of 2,321.90 MW.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="updates-section">
+        <div class="updates-container">
+            <h3>Recent Hydro Energy Updates</h3>
+            <div class="updates-carousel">
+                <button class="carousel-arrow prev">❮</button>
+                <div class="carousel-grid">
+                    <div class="update-card active">
+                        <div class="update-tag" style="background: #4CAF50;">New Policy</div>
+                        <p class="update-date">Feb 2025</p>
+                        <h4>TNGEDCL signs MoU for 1000 MW PSP in Kalvarayan Hills</h4>
+                        <p>7-year completion timeline with 10% free power to state</p>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-tag" style="background: #8BC34A;">Eco Initiative</div>
+                        <p class="update-date">Jan 2025</p>
+                        <h4>Mettur Dam achieves 79.28% availability factor</h4>
+                        <p>Generated 700 MU in 2024-25 through modernization</p>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-tag" style="background: #CDDC39;">Innovation</div>
+                        <p class="update-date">Dec 2024</p>
+                        <h4>Small Hydro Policy 2024 implemented</h4>
+                        <p>40-year incentives for private projects up to 25 MW</p>
+                    </div>
+                </div>
+                <button class="carousel-arrow next">❯</button>
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+        // Carousel Functionality
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Auto advance slides
+        setInterval(nextSlide, 5000);
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Update Carousel
+let currentUpdate = 0;
+const updateCards = document.querySelectorAll('.update-card');
+const updateDots = document.querySelectorAll('.updates-section .dot');
+
+function showUpdate(index) {
+    updateCards.forEach(card => {
+        card.classList.remove('active');
+        card.style.opacity = '0';
+    });
+    
+    updateDots.forEach(dot => dot.classList.remove('active'));
+    
+    setTimeout(() => {
+        updateCards[index].classList.add('active');
+        updateCards[index].style.opacity = '1';
+        updateDots[index].classList.add('active');
+    }, 300);
+}
+
+document.querySelector('.carousel-arrow.next').addEventListener('click', () => {
+    currentUpdate = (currentUpdate + 1) % updateCards.length;
+    showUpdate(currentUpdate);
+});
+
+document.querySelector('.carousel-arrow.prev').addEventListener('click', () => {
+    currentUpdate = (currentUpdate - 1 + updateCards.length) % updateCards.length;
+    showUpdate(currentUpdate);
+});
+
+updateDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentUpdate = index;
+        showUpdate(currentUpdate);
+    });
+});
+
+// Auto-advance updates
+setInterval(() => {
+    currentUpdate = (currentUpdate + 1) % updateCards.length;
+    showUpdate(currentUpdate);
+}, 5000);
+        
+
+    </script>
+</body>
+</html>
