@@ -351,24 +351,146 @@
         display: none;
     }
         }
+
+        .windfarm-section {
+    padding: 80px 20px;
+    background: #FFF5EE;
+}
+
+.windfarm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.windfarm-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.windfarm-carousel {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.wf-carousel-inner {
+    position: relative;
+    height: 400px;
+}
+
+.wf-carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.wf-carousel-slide.active {
+    opacity: 1;
+}
+
+.wf-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wf-carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.wf-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.wf-dot.active {
+    background: #fff;
+}
+
+.windfarm-details h3 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.windfarm-stats {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.windfarm-stats li {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.windfarm-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-value {
+    font-size: 32px;
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .windfarm-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .wf-carousel-inner {
+        height: 300px;
+    }
+    
+    .windfarm-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
     <section class="hero">
         <div class="carousel">
             <div class="carousel-slide active">
-                <img src="Images/beach.jpg" alt="Tamil Nadu Beach">
+                <img src="Images/wind1.jpg" alt="Tamil Nadu Beach">
             </div>
             <div class="carousel-slide">
-                <img src="Images/coast.jpg" alt="Solar Panels">
+                <img src="Images/wind2.jpg" alt="Solar Panels">
             </div>
             <div class="carousel-slide">
-                <img src="Images/hydroe.jpeg" alt="Tamil Village">
+                <img src="Images/wind3.jpg" alt="Tamil Village">
             </div>
         </div>
         <div class="overlay">
-            <h1 class="hero-title">Innovative Hydro Projects in Tamil Nadu</h1>
-            <p class="hero-description">Pioneering sustainable hydro energy solutions, Sustain empowers Tamil Nadu with cutting-edge innovations for a cleaner, greener future.</p>
+            <h1 class="hero-title">Harness Tamil Nadu's Wind Power</h1>
+            <p class="hero-description">Experience the future of clean energy with Tamil Nadu's unparalleled wind resources, driving sustainable growth and innovation.</p>
             <div class="button-group">
                 <a href="#systems" class="btn btn-primary">Explore the solutions</a>
                 <a href="#contact" class="btn btn-secondary">Contact</a>
@@ -384,102 +506,88 @@
     <!-- Hydro Systems Section -->
     <section id="systems" class="systems-section">
         <div class="systems-container">
-            <h2 class="section-title">Hydro Energy Systems in Tamil Nadu</h2>
+            <h2 class="section-title">Wind Energy Systems in Tamil Nadu</h2>
             
             <div class="system-card">
-                <img src="Images/Mettur.jpeg" alt="Conventional Hydro" class="system-image">
+                <img src="Images/muppandal.jpg" alt="Conventional Hydro" class="system-image">
                 <div class="system-content">
-                    <h3>Conventional Hydropower</h3>
-                    <p>Traditional dam-based systems utilizing river flow:</p>
+                    <h3>Onshore Wind farms</h3>
+                    <p>Wind turbine that's located on land and generates electricity from the wind.</p>
                     <ul>
-                        <li>Mettur Dam (120 MW capacity)</li>
-                        <li>Pykara Hydroelectric Project (150 MW)</li>
-                        <li>Average 3,500 MU annual generation</li>
+                        <li>Often found in rural areas or fields</li>
+                        <li>Muppandal Wind farm installed capacity is 1,500 MW.</li>
+                        <li>4th largest wind farm in the world.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="system-card">
-                <img src="Images/Kadamparai.jpg" alt="Pumped Storage" class="system-image">
+                <img src="Images/smallwind.jpg" alt="Pumped Storage" class="system-image">
                 <div class="system-content">
-                    <h3>Pumped Storage Systems</h3>
-                    <p>Energy storage solution using surplus power:</p>
+                    <h3>Small Wind Turbines</h3>
+                    <p>wind turbines that generate electricity for small-scale use. These turbines are typically smaller than those found in wind farms. </p>
                     <ul>
-                        <li>Upper reservoir (Kalvarayan Hills)</li>
-                        <li>Lower reservoir (Existing dams)</li>
-                        <li>80% round-trip efficiency</li>
+                        <li>Generally used for small scale usage for homes,small factories.</li>
+                        <li>Power produced is in the range of 55 KW to 600 KW.</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="system-card">
-                <img src="Images/pykara.jpg" alt="Small Hydro" class="system-image">
-                <div class="system-content">
-                    <h3>Small Hydropower</h3>
-                    <p>Decentralized rural energy projects:</p>
-                    <ul>
-                        <li>100kW-25MW capacity range</li>
-                        <li>47 operational plants statewide</li>
-                        <li>New 2024 policy incentives</li>
+        </div>
+    </section>
+
+    <section class="windfarm-section">
+        <div class="windfarm-container">
+            <h2 class="section-title">Tamilnadu's Muppandal Wind Farm</h2>
+            <div class="windfarm-content">
+                <div class="windfarm-carousel">
+                    <div class="wf-carousel-inner">
+                        <div class="wf-carousel-slide active">
+                            <img src="Images/muppandal1.jpg" alt="Muppandal Wind Farm">
+                        </div>
+                        <div class="wf-carousel-slide">
+                            <img src="Images/muppandal2.jpg" alt="Wind Turbines">
+                        </div>
+                        <div class="wf-carousel-slide">
+                            <img src="Images/muppandal3.jpeg" alt="Wind Farm Landscape">
+                        </div>
+                    </div>
+                    <div class="wf-carousel-dots">
+                        <span class="wf-dot active"></span>
+                        <span class="wf-dot"></span>
+                        <span class="wf-dot"></span>
+                    </div>
+                </div>
+                <div class="windfarm-details">
+                    <h3>Asia's Largest Onshore Wind Farm</h3>
+                    <p>Located in Kanyakumari district, the Muppandal Wind Farm is Tamil Nadu's flagship renewable energy project with:</p>
+                    <ul class="windfarm-stats">
+                        <li><strong>1,500 MW</strong> Total Installed Capacity</li>
+                        <li><strong>3,000+</strong> Wind Turbines Operational</li>
+                        <li><strong>40%</strong> of TN's Wind Energy Production</li>
+                        <li><strong>4,000+</strong> Hectares Coverage Area</li>
                     </ul>
+                    <p>The farm utilizes advanced 3.4 MW turbines with 150m rotor diameter, capable of generating electricity even at low wind speeds. It powers over 1.2 million homes annually and offsets 3.5 million tons of CO₂ emissions.</p>
+                    <div class="windfarm-stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">25%</div>
+                            <div class="stat-label">India's Wind Energy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">18.5%</div>
+                            <div class="stat-label">Capacity Factor</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Current Projects Section -->
-    <section class="projects-container">
-        <h2 class="section-title">Current Hydro Projects (2025)</h2>
-        
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="Images/pump.jpg" alt="Pumped Storage" class="project-image">
-                <div class="project-location">📍 Kalvarayan Hills</div>
-                <h3>Pumped Storage Projects</h3>
-                <div class="project-stats">
-                    <div class="stat-item">
-                        <div class="stat-value">3,300 MW</div>
-                        <div class="stat-label">Greenko Projects</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">2,500 MW</div>
-                        <div class="stat-label">Tangedco Projects</div>
-                    </div>
-                </div>
-                <p>Developing off-river pumped storage systems for energy storage and grid stability.</p>
-            </div>
-
-            <div class="project-card">
-                <img src="Images/py.jpeg" alt="Small Hydro" class="project-image">
-                <div class="project-location">📍 Statewide Canals</div>
-                <h3>Small Hydropower Expansion</h3>
-                <div class="project-stats">
-                    <div class="stat-item">
-                        <div class="stat-value">300 MW</div>
-                        <div class="stat-label">2030 Target</div>
-                    </div>
-                </div>
-                <p>The policy focuses on small hydro projects ranging from 100 KW to 10 MW (Unit size of 5 MW each)</p>
-            </div>
-
-            <div class="project-card">
-                <img src="Images/mukurthi.jpg" alt="Plant Upgrade" class="project-image">
-                <div class="project-location">📍 47 Plants Statewide</div>
-                <h3>Plant Modernization</h3>
-                <div class="project-stats">
-                    <div class="stat-item">
-                        <div class="stat-value">₹362B</div>
-                        <div class="stat-label">Investment</div>
-                    </div>
-                </div>
-                <p>The Tamil Nadu Generation and Distribution Corporation (Tangedco) has 47 hydropower stations with a generation capacity of 2,321.90 MW.</p>
-            </div>
-        </div>
+    
 
     </section>
     <section class="updates-section">
         <div class="updates-container">
-            <h2 class="section-title">Recent Hydro Energy Updates (2024-2025)</h2>
+            <h2 class="section-title">Recent Wind Energy Updates (2024-2025)</h2>
             <div class="updates-carousel">
                 <button class="carousel-arrow prev">❮</button>
                 <div class="updates-wrapper">
@@ -488,36 +596,36 @@
                         <div class="updates-group">
                             <div class="update-card">
                                 <div class="update-tag policy" style="background: #4CAF50;">Policy Update</div>
-                                <p class="update-date">06 Feb 2025</p>
-                                <h4>New PSP Approval in Kalvarayan Hills</h4>
-                                <p>TNERC approves 1500 MW pumped storage project with ₹9,200 crore investment</p>
+                                <p class="update-date">05 Dec 2024</p>
+                                <h4>Refurbishment and Life extension policy</h4>
+                                <p>state recently released the Tamil Nadu Repowering, Refurbishment and Life Extension Policy for Wind Power Projects, 2024, valid till March 31, 2030. The policy also takes into account life extension projects that focus on extending the operational life of turbines beyond their design life or the typical 20-year lifespan. </p>
                             </div>
                             <div class="update-card">
                                 <div class="update-tag modernization" style="background: #8BC34A;">Modernization</div>
-                                <p class="update-date">04 Feb 2025</p>
-                                <h4>Mettur Dam Enhancement</h4>
-                                <p>Upgraded turbines increase generation capacity by 18% to 142 MW</p>
+                                <p class="update-date">05 Dec 2024</p>
+                                <h4>Optimising old small wind turbine projects</h4>
+                                <p>Currently, turbines with capacities of up to 10 MW are available in the domestic and international markets. By upgrading to these new turbines, the wind energy potential of each site can be optimised, leading to increased installed capacity and generation.</p>
                             </div>
                             <div class="update-card">
                                 <div class="update-tag new-project" style="background: #CDDC39;">New Project</div>
-                                <p class="update-date">01 Feb 2025</p>
-                                <h4>Kundah PSP Launch</h4>
-                                <p>Construction begins on 1440 MW pumped storage facility in Nilgiris</p>
+                                <p class="update-date">20 Dec 2024</p>
+                                <h4>Micro wind turbine to come up at Panjapur</h4>
+                                <p>Unlike the traditional wind turbine, which requires the wind velocity of 7 km per hour to generate electricity, the wind tree can do it with wind velocity of just 2.5 km per hour</p>
                             </div>
                         </div>
                         <!-- Second Set of Updates -->
                         <div class="updates-group">
                             <div class="update-card">
                                 <div class="update-tag partnership" style="background: #FFC107;">Partnership</div>
-                                <p class="update-date">28 Jan 2025</p>
-                                <h4>Adani-TNGEDCL MoU</h4>
-                                <p>Partnership signed for 2000 MW hydro storage projects across 5 locations</p>
+                                <p class="update-date">22 Nov 2024</p>
+                                <h4>Hyundai Motors India Limited</h4>
+                                <p>Hyundai Motor India Limited (HMIL) will be setting up two renewable energy plants in Tamil Nadu for ₹38 crore as part of its target of transitioning to using 100% renewable energy by 2025.</p>
                             </div>
                             <div class="update-card">
                                 <div class="update-tag innovation" style="background: #9C27B0;">Innovation</div>
-                                <p class="update-date">25 Jan 2025</p>
-                                <h4>Smart Grid Implementation</h4>
-                                <p>AI-driven management system deployed in 12 hydro plants</p>
+                                <p class="update-date">2024</p>
+                                <h4>Offsetters Community</h4>
+                                <p>This project involves the implementation of an 8.5 MW capacity wind power project which consists of 13 Wind Turbine Generators (WTGs) near villages in Kanyakumari, Tirunelveli and Coimbatore, in Tamil Nadu. The project converts wind energy to electrical energy. Power generated by the wind turbines will be both exported to the grid and captured for storage.</p>
                             </div>
                         </div>
                     </div>
@@ -594,6 +702,34 @@ nextBtn.addEventListener('click', () => {
 });
 
 updateButtons();
+
+// Wind Farm Carousel
+const wfSlides = document.querySelectorAll('.wf-carousel-slide');
+const wfDots = document.querySelectorAll('.wf-dot');
+let currentWfSlide = 0;
+
+function showWfSlide(index) {
+    wfSlides.forEach(slide => slide.classList.remove('active'));
+    wfDots.forEach(dot => dot.classList.remove('active'));
+    
+    wfSlides[index].classList.add('active');
+    wfDots[index].classList.add('active');
+}
+
+function nextWfSlide() {
+    currentWfSlide = (currentWfSlide + 1) % wfSlides.length;
+    showWfSlide(currentWfSlide);
+}
+
+wfDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentWfSlide = index;
+        showWfSlide(currentWfSlide);
+    });
+});
+
+// Auto advance every 5 seconds
+setInterval(nextWfSlide, 5000);
 
 
     </script>
