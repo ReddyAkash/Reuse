@@ -473,6 +473,59 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Experts Section Styles */
+.experts-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.experts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #2ecc71;
+    color: white;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+    .experts-table {
+        overflow-x: auto;
+    }
+    
+    table {
+        min-width: 600px;
+    }
+    
+    th, td {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -631,6 +684,44 @@
                     </div>
                 </div>
                 <button class="carousel-arrow next">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="experts" class="experts-section">
+        <div class="experts-container">
+            <h2 class="section-title">Interact with Experts Across India to Share or Gain Valuable Information</h2>
+            <div class="experts-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Designation</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dr. Rajesh Kumar</td>
+                            <td>Director, National Hydro Power Corporation</td>
+                            <td>rajesh.kumar@nhpc.in</td>
+                            <td>+91 98765 43210</td>
+                        </tr>
+                        <tr>
+                            <td>Prof. Anjali Mehta</td>
+                            <td>HOD Renewable Energy, IIT Madras</td>
+                            <td>amehta@iitm.ac.in</td>
+                            <td>+91 87654 32109</td>
+                        </tr>
+                        <tr>
+                            <td>Mr. Vikram Singh</td>
+                            <td>Chief Engineer, TN Energy Development Agency</td>
+                            <td>vikram.tneda@tn.gov.in</td>
+                            <td>+91 76543 21098</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
