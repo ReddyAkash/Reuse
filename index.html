@@ -389,6 +389,66 @@
                 font-size: 28px;
             }
         }
+
+        /* Objective Section Styles */
+.objective-section {
+    padding: 80px 20px;
+    background: #f8fff8;
+}
+
+.objective-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.objective-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.objective-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.highlight {
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+.objective-list {
+    text-align: left;
+    margin: 30px 0;
+    padding-left: 20px;
+}
+
+.objective-list li {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .objective-content {
+        padding: 25px;
+    }
+    
+    .objective-text {
+        font-size: 16px;
+    }
+    
+    .objective-list li {
+        font-size: 14px;
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -421,6 +481,30 @@
             <button class="cta-button" onclick="scrollToSection('initiatives')">Learn More</button>
         </div>
     </section>
+
+    <section class="objective-section">
+        <div class="objective-container">
+            <h2 class="section-title">Objective of this page </h2>
+            <div class="objective-content">
+                <p class="objective-text">
+                    Hello everyone, I am <span class="highlight">T.Akash Reddy (21MIS1128)</span>,<br>
+                    pursuing M.Tech Integrated in Software Engineering at VIT Chennai.<br><br>
+                    This platform aims to showcase Tamil Nadu's remarkable progress in renewable energy adoption.<br> 
+                    Through this initiative, I want to:
+                </p>
+                <ul class="objective-list">
+                    <li>Document current sustainable energy projects across the state</li>
+                    <li>Highlight government and private sector initiatives</li>
+                    <li>Educate about renewable energy technologies in use</li>
+                    <li>Promote community participation in green initiatives</li>
+                </ul>
+                <p class="objective-text">
+                    Join me in exploring Tamil Nadu's journey towards a sustainable future through innovative energy solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+    
 
     <section id="initiatives" class="initiatives-section">
         <h2 class="section-title">Strategic Planning for a Sustainable Tamilnadu</h2>
